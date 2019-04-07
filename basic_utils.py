@@ -88,11 +88,12 @@ def load_data(main_dir, trial_name, file_type):
     Output: data - data class containing the results
     """
     
-    if file_type == 'csv':
+    if file_type == '.csv':
         data_df = pd.read_csv(main_dir + trial_name + file_type)
-    elif file_type == 'txt':
-        data_df = pd.read_table(main_dir + trial_name + file_type)
-    elif file_type == 'pkl':
+    elif file_type == '.txt':
+        data_df = pd.read_csv(main_dir + trial_name + file_type, 
+                              sep=None, engine='python')
+    elif file_type == '.pkl':
         data_df = pd.read_pickle(main_dir + trial_name + file_type)
     else:
         raise ValueError('Particle file must be either a csv, txt, or pkl file')

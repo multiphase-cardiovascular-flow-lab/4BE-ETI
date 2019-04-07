@@ -102,3 +102,8 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+
+# files generated after the particle
+# tracking code runs
+*.log
+*.pkl

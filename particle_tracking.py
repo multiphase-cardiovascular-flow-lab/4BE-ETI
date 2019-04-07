@@ -19,24 +19,25 @@ Required user inputs are directly below
 """
 
 # directory containing the file with particle information (location, area, frame number)
-main_dir = 
+# you must include the full path to the directory here
+main_dir = '4BE-ETI/Examples/' 
 # name of file containing the particle information
-trial_name =
+trial_name = 'example_data'
 # type of file containing the particle information (options include: .txt, .csv, .pkl) 
-file_type =
+file_type = '.txt'
 
 # 2d or 3d tracking?
-dimension = 
+dimension = '2d'
 # box size in x direction for track initialization (a good initial guess is the expected 
 # maximum displacement of the particles in the x direction between frames)
-box_size_initial_x =
+box_size_initial_x = 10
 # box size in y direction for track initialization 
-box_size_initial_y = 
+box_size_initial_y = 10
 # box size in z direction for track initialization
-box_size_initial_z =
+box_size_initial_z = None
 # box size used after a track is initialized (this should be as small as possible to 
-eliminate spurious track)
-box_size =
+# eliminate spurious track)
+box_size = 5
 
 
 
@@ -59,7 +60,7 @@ logging.info('Particle tracking initialized.')
 
 start_time = time.time()
 
-for jj in range(1, self.data.Slice.max() + 1):
+for jj in range(1, data.Slice.max() + 1):
     if jj % 500 == 0:
         logging.info(str(jj))
         logging.info(str(time.time() - start_time) + 'seconds')
